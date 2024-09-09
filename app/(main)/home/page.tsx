@@ -97,7 +97,7 @@ export default function Home() {
         <div>
             <div className="md:px-8 xl:px-20 2xl:px-40 py-7">
                 <div className="py-16 text-5xl text-secondary text-center font-bold">
-                    Hi Ino, here's what's recommended for you!
+                    Hi Ino, here&apos;s what&apos;s recommended for you!
                 </div>
                 <div className="pb-20">
                     <div className="py-16 text-5xl text-secondary text-center font-bold">
@@ -174,13 +174,13 @@ export default function Home() {
                     <div className="text-xl text-gray-500 leading-8">
                         <p className="py-5">
                             Welcome to a world of hidden opportunities! Did you
-                            know that there's wealth hidden in plain sight for
+                            know that there&apos;s wealth hidden in plain sight for
                             Small Disadvantaged Businesses.
                         </p>
                         <p>
-                            If you're ready to explore the realm of federal
-                            contracting or if you've already started but seek to
-                            streamline your processes, you're in the right
+                            If you&apos;re ready to explore the realm of federal
+                            contracting or if you&apos;ve already started but seek to
+                            streamline your processes, you&apos;re in the right
                             place.
                         </p>
                     </div>
