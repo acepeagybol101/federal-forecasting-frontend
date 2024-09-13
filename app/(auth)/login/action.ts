@@ -1,29 +1,33 @@
+"use server";
+
 import { redirect } from "next/navigation";
 import { formSchema } from "@/app/(auth)/login/schema";
+import { cookies } from 'next/headers';
+import { apiFetch } from '@/lib/fetch';
 
 export async function login(formData: FormData) {
-    const data = formSchema.safeParse({
+    const cookieStore = cookies();
+
+    const request = formSchema.safeParse({
         email: formData.get("email") as string,
         password: formData.get("password") as string,
     });
 
     // Return early if the form data is invalid
-    if (!data.success) {
+    if (!request.success) {
         return {
-            errors: data.error.flatten().fieldErrors,
+            errors: request.error.flatten().fieldErrors,
         };
     }
-
-    const response = await fetch("http://federal.test/api/users/login", {
+    
+    const response = await apiFetch('/users/login', {
         method: "POST",
-        body: JSON.stringify(data.data),
-        headers: {
-            "Content-Type": "application/json",
-        },
+        body: JSON.stringify(request.data)
     });
 
-    // const data = await response.json();
-    console.log(await response.json());
+    cookieStore.set('token', response.data.token);
 
-    // redirect("/home");
+    console.log(response);
+
+    redirect("/home");
 }
