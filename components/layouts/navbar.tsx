@@ -14,18 +14,22 @@ export default function Navbar() {
         <nav>
             <div className="p-2 md:px-8 xl:px-20 2xl:px-40 py-7">
                 <div className="flex">
-                    <Image
-                        src="/images/main.png"
-                        width={200}
-                        height={200}
-                        alt="Logo"
-                        className=""
-                    />
+                    <div className="w-auto h-auto">
+                        <Image
+                            src="/images/main.png"
+                            width={203}
+                            height={0}
+                            alt="Logo"
+                            className="w-52"
+                            priority
+                        />
+                    </div>
 
                     <div className="m-auto lg:ml-14 hidden md:block ">
                         <div className="relative">
                             <Input
-                                id="email"
+                                id="search"
+                                name="search"
                                 placeholder="Search"
                                 className="block rounded-full appearance-none lg:w-[445px] md:w-[380px]"
                             />
@@ -43,7 +47,8 @@ export default function Navbar() {
                 </div>
                 <div className="relative md:hidden mx-4 mt-3">
                     <Input
-                        id="email"
+                        id="search-mobile"
+                        name="search-mobile"
                         placeholder="Search"
                         className="block rounded-full appearance-none lg:w-[445px] md:w-[380px]"
                     />

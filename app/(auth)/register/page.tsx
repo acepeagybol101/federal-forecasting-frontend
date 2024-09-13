@@ -29,7 +29,7 @@ export default function Register() {
                 />
                 <Card className="w-[500px] rounded-xl overflow-hidden border-0">
                     <CardContent className="py-5 px-7 bg-[#F3F3F3]">
-                        <form>
+                        <form id="register">
                             <div className=" w-full items-center">
                                 <div className="relative mt-4">
                                     <HiOutlineUser className="absolute text-gray-800 h-auto w-6 my-auto top-0 bottom-0 left-4" />

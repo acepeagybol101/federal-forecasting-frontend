@@ -1,64 +1,19 @@
 import * as React from "react";
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { categories, steps } from "@/lib/data";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "@/components/ui/carousel";
 
 import { HiArrowDownTray } from "react-icons/hi2";
+import { FaChevronRight } from "react-icons/fa";
 import { FaApple } from "react-icons/fa6";
-
-export const categories = [
-    {
-        icon: "/images/rocket.png",
-        title: "Get Started",
-    },
-    {
-        icon: "/images/building.png",
-        title: "Learn about the Federal Government",
-    },
-    {
-        icon: "/images/people.png",
-        title: "Build Community",
-    },
-    {
-        icon: "/images/chart-bar.png",
-        title: "Grow Your Business",
-    },
-    {
-        icon: "/images/protactor.png",
-        title: "Score New Prospects",
-    },
-    {
-        icon: "/images/users.png",
-        title: "Connect with Members",
-    },
-];
-
-export const steps = [
-    {
-        key: "01",
-        title: "Register In App",
-        description: "Get Yourself Registered And Choose Business Interest",
-    },
-    {
-        key: "02",
-        title: "Discover And Access To Articles",
-        description:
-            "Easily Access To Government Scheme’s Articles And Subscription Based Attachments",
-    },
-    {
-        key: "03",
-        title: "Connecting And Communicating",
-        description:
-            "Make Connections And Start Conversations With Individuals And Groups Who Have Same Business Interest",
-    },
-    {
-        key: "04",
-        title: "Stay Engaged With Post Sharing",
-        description:
-            "Share Your Thoughts Via Any Media Type And Stay Engaged On The App",
-    },
-];
 
 export default function Home() {
     const popular = [1, 2, 3].map((popular, index) => (
@@ -99,6 +54,86 @@ export default function Home() {
                 <div className="py-16 text-5xl text-secondary text-center font-bold">
                     Hi Ino, here&apos;s what&apos;s recommended for you!
                 </div>
+                <div>
+                    <Carousel>
+                        <CarouselContent>
+                            {[1, 2, 3, 4, 5, 6].map((item, key) => (
+                                <CarouselItem key={key}>
+                                    <Card className="border-secondary">
+                                        <CardHeader className="border-b-4 border-[#00ba00]">
+                                            <CardTitle className="text-xl px-16 font-normal flex flex-row items-center w-full text-center ">
+                                                <div className="basis-1/4">
+                                                    Posted 7/31/24, 7:55 AM
+                                                </div>
+                                                <FaChevronRight className="text-primary" />
+                                                <div className="basis-1/4 ">
+                                                    No Updates
+                                                </div>
+                                                <FaChevronRight className="text-primary" />
+                                                <div className="basis-1/4 ">
+                                                    Due 8/23/24, 5:00 AM
+                                                </div>
+                                                <FaChevronRight className="text-primary" />
+                                                <div className="basis-1/4">
+                                                    No Award Date
+                                                </div>
+                                            </CardTitle>
+                                        </CardHeader>
+                                        <CardContent className="p-0">
+                                            <div className=" divide-y divide-gray-300">
+                                                <div className="p-9 pr-16">
+                                                    <div className="text-secondary text-2xl font-semibold leading-9">
+                                                        Lorem ipsum dolor sit
+                                                        amet
+                                                    </div>
+                                                    <div className="text-xl">
+                                                        Lorem ipsum # Dolor sit
+                                                        amet Type Solicitation
+                                                    </div>
+                                                    <p className="text-sm pt-4">
+                                                        Lorem ipsum dolor sit
+                                                        amet, consectetur
+                                                        adipiscing elit, sed do
+                                                        eiusmod tempor
+                                                        incididunt ut labore et
+                                                        dolore magna aliqua. Ut
+                                                        enim ad minim veniam,
+                                                        quis nostrud
+                                                        exercitation ullamco
+                                                        laboris nisi ut aliquip
+                                                        ex ea commodo consequat.
+                                                        Duis aute irure dolor in
+                                                        reprehenderit in
+                                                        voluptate velit esse
+                                                        cillum dolore eu fugiat
+                                                        nulla pariatur.
+                                                        Excepteur sint occaecat
+                                                        cupidatat non proident,
+                                                        sunt in culpa qui
+                                                        officia deserunt mollit
+                                                        anim id est laborum. Sed
+                                                        ut perspiciatis unde
+                                                        omnis iste natus error
+                                                        sit voluptatem
+                                                        accusantium doloremque
+                                                        laudantium, totam rem
+                                                        aperiam, eaque ipsa quae
+                                                        ab illo inventore
+                                                        veritatis et quasi
+                                                        architecto beatae vitae
+                                                        dicta sunt explicabo.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </CardContent>
+                                    </Card>
+                                </CarouselItem>
+                            ))}
+                        </CarouselContent>
+                        <CarouselPrevious />
+                        <CarouselNext />
+                    </Carousel>
+                </div>
                 <div className="pb-20">
                     <div className="py-16 text-5xl text-secondary text-center font-bold">
                         Popular on Federal Forecasting App
@@ -117,13 +152,15 @@ export default function Home() {
                             className="border-secondary bg-white px-14 pt-24 pb-16"
                         >
                             <CardContent className="text-gray-600">
-                                <Image
-                                    src={category.icon}
-                                    width={120}
-                                    height={120}
-                                    alt="Logo"
-                                    className="m-auto mb-4 border-2 border-[#00ba00] rounded-full p-8 overflow-visible"
-                                />
+                                <div className="flex justify-center m-auto relative w-28 py-8 border-2 border-[#00ba00] rounded-full">
+                                    <Image
+                                        src={category.icon}
+                                        width={42}
+                                        height={42}
+                                        alt="Logo"
+                                        className="m-auto"
+                                    />
+                                </div>
                                 <div className="font-semibold text-3xl leading-9 text-center py-9">
                                     {category.title}
                                 </div>
@@ -174,14 +211,14 @@ export default function Home() {
                     <div className="text-xl text-gray-500 leading-8">
                         <p className="py-5">
                             Welcome to a world of hidden opportunities! Did you
-                            know that there&apos;s wealth hidden in plain sight for
-                            Small Disadvantaged Businesses.
+                            know that there&apos;s wealth hidden in plain sight
+                            for Small Disadvantaged Businesses.
                         </p>
                         <p>
                             If you&apos;re ready to explore the realm of federal
-                            contracting or if you&apos;ve already started but seek to
-                            streamline your processes, you&apos;re in the right
-                            place.
+                            contracting or if you&apos;ve already started but
+                            seek to streamline your processes, you&apos;re in
+                            the right place.
                         </p>
                     </div>
                     <Button className="rounded-full text-xl py-8 px-6 mt-8">
