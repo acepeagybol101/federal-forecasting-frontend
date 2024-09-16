@@ -1,18 +1,17 @@
+
 import { NextResponse, type NextRequest } from "next/server";
+import { auth } from "./middlewares/auth";
+import { guest } from "./middlewares/guest";
 
 export function middleware(request: NextRequest)
 {
-    if (!request.cookies.has('token')) {
-        return NextResponse.redirect(new URL('/login', request.url));
-    }
-    if (request.cookies.has('token')) {
-        return NextResponse.redirect('/home');
-    }
-}
+    if (request.cookies.has('token') && request.nextUrl.pathname.startsWith('/login')) {
+        return auth(request)
+    } 
 
-export const config = {
-    matcher: 
-    [
-        '/home'
-    ]
+    if (!request.cookies.has('token')  && !request.nextUrl.pathname.startsWith('/login')) {
+        return guest(request);
+    }
+
+    return NextResponse.next();
 }
