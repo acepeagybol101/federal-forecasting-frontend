@@ -41,7 +41,7 @@ export default function Navbar() {
                         <HiOutlineBell className="w-12 h-auto" />
                         <HiUserCircle className="mx-4 w-12 h-auto text-secondary" />
                         <div className=" text-xl hidden lg:block whitespace-nowrap">
-                            Ino Uy
+                            Derrick
                         </div>
                     </div>
                 </div>
