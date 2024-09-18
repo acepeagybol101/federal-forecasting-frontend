@@ -40,11 +40,23 @@ const dummyFriends = [
   },
 ];
 
-const Profile = () => {
+const Build = () => {
   return (
     <div className="grid grid-cols-12 p-9">
       <div className="p-4 col-span-3">
-        <div className="text-3xl border-b border-gray-400 pb-2">Feed</div>
+        <div className="text-4xl font-bold text-center text-secondary">
+          Welcome to the Communtity!
+        </div>
+        <div className="flex items-center py-10">
+          <HiMiniUserCircle className="h-14 w-14  rounded-full  text-secondary" />
+          <div className="font-medium text-3xl pl-3">Derrick Surrat</div>
+        </div>
+        <div className="text-3xl border-b border-gray-400 pb-2">Channels</div>
+        <div className="text-2xl py-9">Community Guidelines</div>
+        <div className="text-2xl pb-14">Get Started</div>
+        <div className="text-3xl border-b border-gray-400 pb-2">
+          Quick Links
+        </div>
         <div className="flex items-center text-2xl py-4">
           <HiMiniUserGroup className="w-12 h-12 text-secondary" />
           <span className="pl-2">Members</span>
@@ -94,8 +106,8 @@ const Profile = () => {
             </div>
           </div>
           <p className="text-2xl p-12">
-            ✨ Monday Motivation! ✨ "Success is where preparation and
-            opportunity meet." 💡 It’s not just about waiting for the right
+            ✨ Monday Motivation! ✨ &quot;Success is where preparation and
+            opportunity meet.&quot; 💡 It’s not just about waiting for the right
             moment—it’s about being ready when that moment comes. Whether you’re
             prepping for your next government contract or building your
             business, remember that the groundwork you lay today will lead to
@@ -159,4 +171,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Build;
