@@ -66,15 +66,16 @@ export default function Navbar() {
       <div className="bg-secondary text-white">
         <div className=" md:px-8 xl:px-20 2xl:px-40 space-x-32 hidden lg:flex">
           {navbars.map((link) => (
-            <div
-              key={link.name}
-              className={
-                "text-xl border-b-4  hover:border-primary hover:border-b-4 py-7 cursor-pointer " +
-                (isActive(link.link) ? "border-primary" : "border-secondary")
-              }
-            >
-              <Link href={link.link}>{link.name}</Link>
-            </div>
+            <Link key={link.name} href={link.link}>
+              <div
+                className={
+                  "text-xl border-b-4  hover:border-primary hover:border-b-4 py-7 cursor-pointer " +
+                  (isActive(link.link) ? "border-primary" : "border-secondary")
+                }
+              >
+                {link.name}
+              </div>
+            </Link>
           ))}
         </div>
         <div className="lg:hidden p-2 md:px-8 xl:px-20 2xl:px-40">
