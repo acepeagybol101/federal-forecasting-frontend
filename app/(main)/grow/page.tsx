@@ -6,6 +6,7 @@ import {
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import { BsPinMap } from "react-icons/bs";
+import Show from "@/components/grow/show";
 
 const Grow = () => {
   return (
@@ -44,33 +45,38 @@ const Grow = () => {
             Add New Directory
           </div>
         </div>
+
         <div className="grid grid-cols-3 gap-x-24 gap-y-14 pt-14 pb-28 px-32">
           {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((key) => (
-            <div key={key} className="bg-white p-4 rounded-3xl shadow-xl">
-              <div className="flex items-center">
-                <Image
-                  src="/images/sdvosb-logo.png"
-                  width={134}
-                  height={134}
-                  alt="Logo"
-                />
-                <div className="pl-4">
-                  <div className="font-semibold text-3xl">DV SOLUTIONS LLC</div>
-                  <div className="text-2xl font-semibold text-gray-500">
-                    CONSTRUCTION
-                  </div>
-                  <div className="flex items-center pt-1">
-                    <div className="text-xl font-semibold flex items-end">
-                      <BsPinMap className="w-7 h-7 mr-2" />
-                      ARKANSAN
+            <Show key={key}>
+              <div className="bg-white p-4 rounded-3xl shadow-xl">
+                <div className="flex items-center">
+                  <Image
+                    src="/images/sdvosb-logo.png"
+                    width={134}
+                    height={134}
+                    alt="Logo"
+                  />
+                  <div className="pl-4">
+                    <div className="font-semibold text-3xl">
+                      DV SOLUTIONS LLC
                     </div>
-                    <div className="text-gray-500 text-2xl ml-auto pr-3">
-                      view
+                    <div className="text-2xl font-semibold text-gray-500">
+                      CONSTRUCTION
+                    </div>
+                    <div className="flex items-center pt-1">
+                      <div className="text-xl font-semibold flex items-end">
+                        <BsPinMap className="w-7 h-7 mr-2" />
+                        ARKANSAN
+                      </div>
+                      <div className="text-gray-500 text-2xl ml-auto pr-3">
+                        view
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </Show>
           ))}
         </div>
       </div>
