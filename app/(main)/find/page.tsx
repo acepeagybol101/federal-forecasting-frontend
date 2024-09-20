@@ -1,5 +1,9 @@
 import React from "react";
-import { HiChevronRight, HiMagnifyingGlass } from "react-icons/hi2";
+import {
+  HiChevronRight,
+  HiMagnifyingGlass,
+  HiOutlineAdjustmentsVertical,
+} from "react-icons/hi2";
 import { Input } from "@/components/ui/input";
 
 const dummyData = [
@@ -37,7 +41,12 @@ const Find = () => {
                 className="w-[834px] h-[85px] rounded-full text-2xl pl-8 focus-visible:ring-0 focus-visible:ring-offset-0"
                 placeholder="Search here"
               />
-              <HiMagnifyingGlass className="absolute right-0" />
+              <div className="absolute flex right-0 top-0 bottom-0 m-auto">
+                <HiOutlineAdjustmentsVertical className="m-auto h-10 w-10 mr-3" />
+                <div className=" bg-primary rounded-r-full w-28 flex">
+                  <HiMagnifyingGlass className="m-auto h-10 w-10" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
