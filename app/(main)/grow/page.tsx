@@ -49,7 +49,7 @@ const Grow = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-x-24 gap-y-14 pt-14 pb-28 px-32">
+        <div className="grid grid-cols-3 gap-14 pt-14 pb-28 px-14">
           {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((key) => (
             <Show key={key}>
               <div className="bg-white p-4 rounded-3xl shadow-xl">
