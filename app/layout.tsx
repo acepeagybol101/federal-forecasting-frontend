@@ -19,11 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${poppin.className} w-screen bg-[#F2F2F2] overflow-x-hidden`}
-      >
-        {children}
-      </body>
+      <body className={`${poppin.className} bg-[#F2F2F2]`}>{children}</body>
     </html>
   );
 }
