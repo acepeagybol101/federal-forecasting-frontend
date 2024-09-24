@@ -11,14 +11,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import Image from "next/image";
-import {
-  HiOutlineEnvelope,
-  HiOutlinePhone,
-  HiOutlineGlobeAlt,
-  HiOutlineMapPin,
-  HiXMark,
-} from "react-icons/hi2";
+import { HiXMark } from "react-icons/hi2";
 import { Input } from "@/components/ui/input";
 import {
   Select,
