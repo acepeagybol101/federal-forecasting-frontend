@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 import { Input } from "@/components/ui/input";
@@ -9,8 +11,11 @@ import {
   HiOutlinePaperAirplane,
   HiOutlinePencilSquare,
 } from "react-icons/hi2";
+import { Calendar } from "@/components/ui/calendar";
 
 const Connect = () => {
+  const [date, setDate] = React.useState<Date | undefined>(new Date());
+
   return (
     <div className="grid grid-cols-12 gap-4 p-9">
       <div className=" col-span-3 bg-white rounded-3xl relative">
@@ -78,7 +83,23 @@ const Connect = () => {
 
           <HiOutlinePlus className="bg-primary text-white ml-auto w-12 h-12 rounded-full p-1" />
         </div>
-        <div className="h-96 w-full border-b border-gray-300"></div>
+        <div className="flex w-full border-b border-gray-300 h-96">
+          <Calendar
+            mode="single"
+            selected={date}
+            onSelect={setDate}
+            className="h-full w-full flex"
+            classNames={{
+              months:
+                "flex w-full flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0 flex-1 text-2xl",
+              month: "space-y-4 w-full flex flex-col",
+              table: "w-full h-full border-collapse space-y-1",
+              head_row: "",
+              row: "w-full mt-2",
+              caption_label: "text-xl",
+            }}
+          />
+        </div>
 
         <div className="font-medium text-3xl px-5 py-8">UPCOMMING</div>
         <div className="text-2xl p-4 bg-gray-100">
