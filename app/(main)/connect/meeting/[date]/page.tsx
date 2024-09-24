@@ -48,14 +48,25 @@ const MeetingByDate = () => {
               rows={5}
               className="bg-gray-200 rounded-3xl mt-9 text-2xl placeholder:font-medium p-5"
             />
-            <Input
-              type="date"
-              id="title"
-              name="title"
-              placeholder="Title"
-              className="w-full bg-gray-200 rounded-full text-2xl h-14 p-5 placeholder:font-medium mt-9"
-            />
-            {/* <DatePicker className="rounded-full"/> */}
+            <div className="mt-9">
+              <DatePicker />
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <Input
+                type="time"
+                id="title"
+                name="title"
+                placeholder="Title"
+                className="w-full bg-gray-200 rounded-full text-2xl h-14 p-5 placeholder:font-medium mt-9"
+              />
+              <Input
+                type="time"
+                id="title"
+                name="title"
+                placeholder="Title"
+                className="w-full bg-gray-200 rounded-full text-2xl h-14 p-5 placeholder:font-medium mt-9"
+              />
+            </div>
             <div className="text-[28px] font-medium py-9">ADD USERS</div>
             <div className="flex items-center">
               <div className="w-14 h-14 rounded-full bg-gray-300"></div>

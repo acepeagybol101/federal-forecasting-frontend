@@ -5,6 +5,7 @@ import {
   HiOutlineAdjustmentsVertical,
 } from "react-icons/hi2";
 import { Input } from "@/components/ui/input";
+import Filter from "@/components/find/filter";
 
 const dummyData = [
   {
@@ -42,7 +43,9 @@ const Find = () => {
                 placeholder="Search here"
               />
               <div className="absolute flex right-0 top-0 bottom-0 m-auto">
-                <HiOutlineAdjustmentsVertical className="m-auto h-10 w-10 mr-3" />
+                <Filter>
+                  <HiOutlineAdjustmentsVertical className="m-auto h-10 w-10 mr-3 cursor-pointer" />
+                </Filter>
                 <div className=" bg-primary rounded-r-full w-28 flex">
                   <HiMagnifyingGlass className="m-auto h-10 w-10" />
                 </div>
