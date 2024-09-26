@@ -13,14 +13,14 @@ import Filter from "@/components/grow/filter";
 const Grow = () => {
   return (
     <div>
-      <div className="bg-[url('/images/bg-grow.png')] bg-[#03537D] h-[706px]">
+      <div className="bg-[url('/images/bg-grow.png')] bg-[#03537D] h-56 md:h-[706px]">
         <div className="bg-[#03537D] h-full bg-opacity-85">
           <div className="flex items-center h-full">
             <div className="m-auto">
-              <div className="text-[55px] font-semibold italic text-white text-center pb-5">
+              <div className="text-4xl md:text-[55px] font-semibold italic text-white text-center pb-5">
                 GROW YOUR BUSINESS. EXPAND YOUR NETWORK
               </div>
-              <div className="relative w-[834px] m-auto">
+              <div className="relative hidden md:block w-[834px] m-auto">
                 <Input
                   className=" h-[85px] rounded-full text-2xl pl-8 focus-visible:ring-0 focus-visible:ring-offset-0"
                   placeholder="Search here"
@@ -39,10 +39,12 @@ const Grow = () => {
         </div>
       </div>
 
-      <div className="px-[50px] pt-8">
-        <div className="flex items-center pb-3 border-b border-gray-300">
-          <div className="font-semibold text-[40px]">DIRECTORIES</div>
-          <div className="ml-auto bg-gray-300 mr-5 py-2 px-5 rounded-full">
+      <div className="px-4 md:px-[50px] pt-8">
+        <div className="md:flex items-center pb-3 border-b border-gray-300 space-y-2 md:space-y-0">
+          <div className="font-semibold text-3xl pb-4 md:pb-0 md:text-[40px]">
+            DIRECTORIES
+          </div>
+          <div className="ml-auto bg-gray-300 md:mr-5 py-2 px-5 rounded-full">
             My Directory
           </div>
           <div className="bg-primary text-white py-2 px-5 rounded-full">
@@ -50,18 +52,19 @@ const Grow = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-14 pt-14 pb-28 px-14">
+        <div className="grid md:grid-cols-3 gap-8 md:gap-14 pt-14 pb-28 md:px-14">
           {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((key) => (
             <Show key={key}>
               <div className="bg-white p-4 rounded-3xl shadow-xl cursor-pointer">
-                <div className="flex items-center">
+                <div className="md:flex items-center">
                   <Image
                     src="/images/sdvosb-logo.png"
                     width={134}
                     height={134}
                     alt="Logo"
+                    className="m-auto md:m-0"
                   />
-                  <div className="pl-4">
+                  <div className="pl-4 pt-4 md:pt-0">
                     <div className="font-semibold text-3xl">
                       DV SOLUTIONS LLC
                     </div>
