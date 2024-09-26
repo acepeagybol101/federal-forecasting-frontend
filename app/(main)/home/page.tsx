@@ -51,7 +51,7 @@ export default function Home() {
 
   return (
     <div>
-      <div className="md:px-8 xl:px-20 2xl:px-40 py-7">
+      <div className="px-4 md:px-8 xl:px-20 2xl:px-40 py-7">
         <div className="py-16 text-5xl text-secondary text-center font-bold">
           Hi Ino, here&apos;s what&apos;s recommended for you!
         </div>
@@ -112,14 +112,14 @@ export default function Home() {
           <div className="py-16 text-5xl text-secondary text-center font-bold">
             Popular on Federal Forecasting App
           </div>
-          <div className="grid grid-cols-3 gap-4">{popular}</div>
+          <div className="grid md:grid-cols-3 gap-4">{popular}</div>
         </div>
       </div>
-      <div className="pb-20 md:px-8 xl:px-20 2xl:px-40">
+      <div className="pb-20 px-4 md:px-8 xl:px-20 2xl:px-40">
         <div className="py-16 text-5xl text-secondary text-center font-bold">
           Select Categories
         </div>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-3 gap-4">
           {categories.map((category, key) => (
             <Card
               key={key}
@@ -250,12 +250,12 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-[url('/images/bg-home-video.png')] bg-cover bg-no-repeat pt-36 md:px-8 xl:px-20 2xl:px-40">
+      <div className="bg-[url('/images/bg-home-video.png')] bg-cover bg-no-repeat px-4 pt-36 md:px-8 xl:px-20 2xl:px-40">
         <div className="py-16 text-5xl text-secondary text-center font-bold">
           Videos
         </div>
 
-        <div className="grid grid-cols-4 gap-4 pt-14 pb-36">
+        <div className="grid md:grid-cols-4 gap-4 pt-14 pb-36">
           <div>
             <div className="border rounded w-auto h-[252px] bg-gray-800"></div>
             <div className="font-medium text-secondary pt-6">
