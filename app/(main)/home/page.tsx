@@ -178,34 +178,9 @@ export default function Home() {
                 </div>
             </div> */}
 
-      <div className="relative bg-[url('/images/bg-home-white.png')]  bg-no-repeat bg-bottom md:px-8 xl:px-20 2xl:px-40 py-7">
-        <div className="w-[580px] pt-24 pb-28">
-          <div className="text-6xl leading-[80px] font-bold text-secondary">
-            Discover Federal Contracting{" "}
-            <span className="text-primary">Opportunities</span>
-          </div>
-          <div className="text-xl text-gray-500 leading-8">
-            <p className="py-5">
-              Welcome to a world of hidden opportunities! Did you know that
-              there&apos;s wealth hidden in plain sight for Small Disadvantaged
-              Businesses.
-            </p>
-            <p>
-              If you&apos;re ready to explore the realm of federal contracting
-              or if you&apos;ve already started but seek to streamline your
-              processes, you&apos;re in the right place.
-            </p>
-          </div>
-          <Button className="rounded-full text-xl py-8 px-6 mt-8">
-            Get the Book Now!
-            <HiArrowDownTray className="ml-3 bg-white rounded-full text-black p-2 w-9 h-auto" />
-          </Button>
-        </div>
-      </div>
-
       <div className="flex bg-gradient-to-r from-[#99c5ea] to-[#f0ab91] py-40 md:px-8 xl:px-20 2xl:px-40">
         <div className="my-auto">
-          <div className="font-bold text-7xl pb-9 text-secondary">
+          <div className="font-bold text-[64px] pb-9 text-secondary">
             Federal Forecasting App
           </div>
           <div className="text-3xl  font-semibold text-gray-700 text-center tracking-wide">
@@ -248,6 +223,31 @@ export default function Home() {
           alt="Logo"
           className="ml-auto"
         />
+      </div>
+
+      <div className="relative bg-[url('/images/bg-home-white.png')]  bg-no-repeat bg-bottom md:px-8 xl:px-20 2xl:px-40 py-7">
+        <div className="w-[580px] pt-24 pb-28">
+          <div className="text-[64px] leading-[80px] font-bold text-secondary">
+            Discover Federal Contracting{" "}
+            <span className="text-primary">Opportunities</span>
+          </div>
+          <div className="text-xl text-gray-500 leading-8">
+            <p className="py-5">
+              Welcome to a world of hidden opportunities! Did you know that
+              there&apos;s wealth hidden in plain sight for Small Disadvantaged
+              Businesses.
+            </p>
+            <p>
+              If you&apos;re ready to explore the realm of federal contracting
+              or if you&apos;ve already started but seek to streamline your
+              processes, you&apos;re in the right place.
+            </p>
+          </div>
+          <Button className="rounded-full text-xl py-8 px-6 mt-8">
+            Get the Book Now!
+            <HiArrowDownTray className="ml-3 bg-white rounded-full text-black p-2 w-9 h-auto" />
+          </Button>
+        </div>
       </div>
 
       <div className="bg-[url('/images/bg-home-video.png')] bg-cover bg-no-repeat pt-36 md:px-8 xl:px-20 2xl:px-40">

@@ -23,11 +23,11 @@ const FAQ = () => {
       <Accordion type="single" collapsible className="  text-white">
         {dummyData.map((data, index) => (
           <AccordionItem key={index} value={"item-" + index}>
-            <AccordionTrigger className="text-5xl flex items-center hover:no-underline py-6">
+            <AccordionTrigger className="text-3xl flex items-center hover:no-underline py-6">
               <div>{data}</div>
               <HiChevronDown className="ml-auto transition-transform duration-200" />
             </AccordionTrigger>
-            <AccordionContent className="text-5xl">
+            <AccordionContent className="text-3xl">
               Yes. It adheres to the WAI-ARIA design pattern.
             </AccordionContent>
           </AccordionItem>

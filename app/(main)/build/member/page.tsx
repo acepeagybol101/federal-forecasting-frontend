@@ -43,7 +43,7 @@ const Member = () => {
           <div className="bg-white rounded-3xl shadow-lg flex p-5">
             <div className="w-[150px] h-[150px] bg-gray-300"></div>
             <div className="px-6 relative">
-              <div className="text-2xl">Gabby Roxas</div>
+              <div className="text-[26px]">Gabby Roxas</div>
               <div className="py-1">NAICS CODE: 11111000</div>
               <div>Georgia</div>
               <Button
