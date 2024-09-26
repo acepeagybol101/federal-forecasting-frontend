@@ -73,7 +73,7 @@ const MeetingByDate = () => {
               <Checkbox className="w-9 h-9 ml-auto  border-black data-[state=checked]:bg-black" />
             </div>
             <div className="flex mt-9">
-              <Button className="text-[28px] font-medium rounded-full py-8 px-16  m-auto">
+              <Button className="rounded-full text-[28px] m-auto" size={"3xl"}>
                 SUBMIT
               </Button>
             </div>

@@ -32,7 +32,10 @@ const Member = () => {
               <div className="text-2xl">Gabby Roxas</div>
               <div className="py-1">NAICS CODE: 11111000</div>
               <div>Georgia</div>
-              <Button className="bg-red-500 rounded-full text-white py-1 px-8 mt-2 absolute bottom-0 flex m-auto">
+              <Button
+                className="rounded-full mt-2 flex m-auto absolute bottom-0 px-8"
+                variant={"danger"}
+              >
                 Unfriend
               </Button>
             </div>
@@ -43,7 +46,10 @@ const Member = () => {
               <div className="text-2xl">Gabby Roxas</div>
               <div className="py-1">NAICS CODE: 11111000</div>
               <div>Georgia</div>
-              <Button className="bg-red-500 rounded-full text-white py-1 px-8 mt-2 absolute bottom-0 flex m-auto">
+              <Button
+                className="rounded-full mt-2 flex m-auto absolute bottom-0 px-8"
+                variant={"danger"}
+              >
                 Unfriend
               </Button>
             </div>
