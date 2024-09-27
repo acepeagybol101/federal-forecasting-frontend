@@ -25,10 +25,12 @@ export async function login(formData: FormData) {
     body: JSON.stringify(request.data),
   });
 
-  cookieStore.set("token", response.data.token);
-  cookieStore.set("user", response.data);
+  if (response.statusCode === 200) {
+    cookieStore.set("token", response.data.token);
+    cookieStore.set("user", response.data);
 
-  console.log(response);
+    redirect("/home");
+  }
 
-  redirect("/home");
+  redirect("/login");
 }
