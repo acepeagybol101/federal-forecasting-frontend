@@ -17,12 +17,12 @@ const Grow = () => {
         <div className="bg-[#03537D] h-full bg-opacity-85">
           <div className="flex items-center h-full">
             <div className="m-auto">
-              <div className="text-4xl md:text-[55px] font-semibold italic text-white text-center pb-5">
+              <div className="text-3xl md:text-5xl font-semibold italic text-white text-center pb-5 p-2">
                 GROW YOUR BUSINESS. EXPAND YOUR NETWORK
               </div>
               <div className="relative hidden md:block w-[834px] m-auto">
                 <Input
-                  className=" h-[85px] rounded-full text-2xl pl-8 focus-visible:ring-0 focus-visible:ring-offset-0"
+                  className="py-8 rounded-full text-lg pl-8 focus-visible:ring-0 focus-visible:ring-offset-0"
                   placeholder="Search here"
                 />
                 <div className="absolute flex right-0 top-0 bottom-0 m-auto">

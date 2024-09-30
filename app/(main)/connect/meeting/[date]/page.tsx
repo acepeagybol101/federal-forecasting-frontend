@@ -10,9 +10,9 @@ import { Button } from "@/components/ui/button";
 const MeetingByDate = () => {
   return (
     <div>
-      <div className="grid grid-cols-12 gap-4 p-9">
-        <div className="w-full col-span-9 space-y-5  rounded-3xl max-h-screen relative">
-          <div className="grid grid-cols-3 gap-9">
+      <div className="grid md:grid-cols-12 gap-4 p-9">
+        <div className="w-full md:col-span-9 space-y-5  rounded-3xl relative">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-9">
             {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => (
               <div
                 key={item}
@@ -32,7 +32,7 @@ const MeetingByDate = () => {
             ))}
           </div>
         </div>
-        <div className="col-span-3 bg-white rounded-3xl">
+        <div className="hidden md:block col-span-3 bg-white rounded-3xl">
           <div className="text-4xl text-secondary border-b  border-gray-400 p-7">
             CREATE MEETING
           </div>
