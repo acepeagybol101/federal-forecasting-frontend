@@ -6,8 +6,8 @@ const Member = () => {
   const dummyTabs = ["ALL FRIENDS", "FRIEND REQUESTS", "SUGGESTIONS", "GROUPS"];
 
   return (
-    <div className="grid grid-cols-12 gap-4">
-      <div className=" col-span-3 bg-white border-r">
+    <div className="grid md:grid-cols-12 gap-4">
+      <div className=" hidden md:block col-span-3 bg-white border-r">
         <div className=" text-3xl text-secondary font-semibold border-b border-gray-300 p-6">
           MEMBERS
         </div>
@@ -21,11 +21,11 @@ const Member = () => {
         </div>
       </div>
 
-      <div className=" col-span-9">
+      <div className=" md:col-span-9">
         <div className=" text-3xl text-secondary font-semibold border-b border-gray-300 p-6">
           ALL FRIENDS
         </div>
-        <div className="grid grid-cols-3 gap-6 p-6">
+        <div className="grid md:grid-cols-3 gap-6 p-6">
           <div className="bg-white rounded-3xl shadow-lg flex p-5">
             <div className="w-[150px] h-[150px] bg-gray-300"></div>
             <div className="px-6 relative">

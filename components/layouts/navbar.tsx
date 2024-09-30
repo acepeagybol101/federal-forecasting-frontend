@@ -9,14 +9,31 @@ import {
   HiUserCircle,
   HiOutlineBell,
   HiOutlineBars3,
+  HiArrowRightStartOnRectangle,
+  HiOutlineEye,
+  HiOutlineUser,
+  HiOutlineBookmark,
+  HiOutlineDocumentText,
 } from "react-icons/hi2";
 import { navbars } from "@/lib/data";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { logout } from "@/components/layouts/action";
 
 export default function Navbar() {
   const pathname = usePathname();
   const isActive = (link: string) => link === pathname;
+
+  const handleLogout = () => {
+    logout();
+  };
 
   return (
     <nav>
@@ -47,10 +64,48 @@ export default function Navbar() {
 
           <div className="ml-auto flex items-center">
             <HiOutlineBell className="w-12 h-auto" />
-            <HiUserCircle className="mx-4 w-12 h-auto text-secondary" />
-            <div className=" text-xl hidden lg:block whitespace-nowrap">
-              Derrick
-            </div>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center">
+                <HiUserCircle className="mx-4 w-12 h-auto text-secondary" />
+                <div className=" text-xl hidden lg:block whitespace-nowrap">
+                  Derrick
+                </div>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem className="flex items-center py-2 tracking-wide font-medium text-lg px-5 cursor-pointer">
+                  <HiOutlineEye className="h-auto w-6 mr-2" />
+                  View Profile
+                </DropdownMenuItem>
+                <DropdownMenuSeparator className="bg-gray-300" />
+                <DropdownMenuItem className="flex items-center py-2 tracking-wide font-medium text-lg px-5 cursor-pointer">
+                  <HiOutlineEye className="h-auto w-6 mr-2" />
+                  My Plans
+                </DropdownMenuItem>
+                <DropdownMenuSeparator className="bg-gray-300" />
+                <DropdownMenuItem className="flex items-center py-2 tracking-wide font-medium text-lg px-5 cursor-pointer">
+                  <HiOutlineUser className="h-auto w-6 mr-2" />
+                  My Account
+                </DropdownMenuItem>
+                <DropdownMenuSeparator className="bg-gray-300" />
+                <DropdownMenuItem className="flex items-center py-2 tracking-wide font-medium text-lg px-5 cursor-pointer">
+                  <HiOutlineDocumentText className="h-auto w-6 mr-2" />
+                  Support Tickets
+                </DropdownMenuItem>
+                <DropdownMenuSeparator className="bg-gray-300" />
+                <DropdownMenuItem className="flex items-center py-2 tracking-wide font-medium text-lg px-5 cursor-pointer">
+                  <HiOutlineBookmark className="h-auto w-6 mr-2" />
+                  Favourites
+                </DropdownMenuItem>
+                <DropdownMenuSeparator className="bg-gray-300" />
+                <DropdownMenuItem
+                  onClick={() => handleLogout()}
+                  className="flex items-center py-2 tracking-wide font-medium text-lg px-5 cursor-pointer"
+                >
+                  <HiArrowRightStartOnRectangle className="h-auto w-6 mr-2" />
+                  Logout
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </div>
         <div className="relative md:hidden mx-4 mt-3">
