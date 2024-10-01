@@ -7,8 +7,8 @@ import {
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import { BsPinMap } from "react-icons/bs";
-import Show from "@/components/grow/show";
-import Filter from "@/components/grow/filter";
+import Show from "./components/show";
+import Filter from "./components/filter";
 
 const Grow = () => {
   return (

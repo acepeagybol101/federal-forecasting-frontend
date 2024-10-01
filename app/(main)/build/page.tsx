@@ -45,7 +45,7 @@ const Build = () => {
     <div className="grid grid-cols-12 gap-12 px-2 p-9">
       <div className="p-4 col-span-3">
         <h3 className="tracking-wider font-bold text-center text-secondary">
-          Welcome to the Communtity!
+          Welcome to the Community!
         </h3>
         <div className="flex items-center py-10">
           <HiUserCircle className="h-auto w-12 rounded-full  text-secondary" />
