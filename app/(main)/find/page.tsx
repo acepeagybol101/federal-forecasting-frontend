@@ -5,7 +5,7 @@ import {
   HiOutlineAdjustmentsVertical,
 } from "react-icons/hi2";
 import { Input } from "@/components/ui/input";
-import Filter from "@/components/find/filter";
+import Filter from "./components/filter";
 
 const dummyData = [
   {

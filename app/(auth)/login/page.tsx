@@ -8,7 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { login } from "@/app/(auth)/login/action";
+import { login } from "@/app/(auth)/actions/Auth";
 import { formSchema } from "@/app/(auth)/login/schema";
 import {
   Form,

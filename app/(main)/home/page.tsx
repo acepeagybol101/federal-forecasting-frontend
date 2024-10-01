@@ -1,53 +1,16 @@
 import * as React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { categories, steps } from "@/lib/data";
+import { categories, steps } from "@/constants/data";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-
 import { HiArrowDownTray } from "react-icons/hi2";
-import { FaChevronRight } from "react-icons/fa";
 import { FaApple } from "react-icons/fa6";
-import FAQ from "@/components/home/faq";
+import FAQ from "./faq";
+import Videos from "./videos";
+import Recommended from "./recommended";
+import Popular from "./popular";
 
 export default function Home() {
-  const popular = [1, 2, 3].map((popular, index) => (
-    <Card key={index} className="border-secondary">
-      <CardHeader className="border-b-4 border-[#00ba00]">
-        <CardTitle className="text-xl font-semibold">
-          Federal Contract Opportunites
-        </CardTitle>
-      </CardHeader>
-      <CardContent className="p-0">
-        <div className=" divide-y divide-gray-300">
-          <div className="px-6 py-4">
-            <div className="text-secondary text-lg">
-              Lorem ipsum dolor sit amet
-            </div>
-            <div className="text-sm">
-              Lorem ipsum dolor sit amet, consectetur adipiscing porro
-              quisquam...
-            </div>
-          </div>
-          <div className="px-6 py-4">
-            <div className="text-secondary text-lg">
-              Lorem ipsum dolor sit amet
-            </div>
-            <div className="text-sm">
-              Lorem ipsum dolor sit amet, consectetur adipiscing porro
-              quisquam...
-            </div>
-          </div>
-        </div>
-      </CardContent>
-    </Card>
-  ));
 
   return (
     <div>
@@ -55,65 +18,8 @@ export default function Home() {
         <div className="py-16 text-5xl text-secondary text-center font-bold">
           Hi Ino, here&apos;s what&apos;s recommended for you!
         </div>
-        <div>
-          <Carousel>
-            <CarouselContent>
-              {[1, 2, 3, 4, 5, 6].map((item, key) => (
-                <CarouselItem key={key}>
-                  <Card className="border-secondary">
-                    <CardHeader className="border-b-4 border-[#00ba00]">
-                      <CardTitle className="text-xl px-16 font-normal flex flex-row items-center w-full text-center ">
-                        <div className="basis-1/4">Posted 7/31/24, 7:55 AM</div>
-                        <FaChevronRight className="text-primary" />
-                        <div className="basis-1/4 ">No Updates</div>
-                        <FaChevronRight className="text-primary" />
-                        <div className="basis-1/4 ">Due 8/23/24, 5:00 AM</div>
-                        <FaChevronRight className="text-primary" />
-                        <div className="basis-1/4">No Award Date</div>
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="p-0">
-                      <div className=" divide-y divide-gray-300">
-                        <div className="p-9 pr-16">
-                          <div className="text-secondary text-2xl font-semibold leading-9">
-                            Lorem ipsum dolor sit amet
-                          </div>
-                          <div className="text-xl">
-                            Lorem ipsum # Dolor sit amet Type Solicitation
-                          </div>
-                          <p className="text-sm pt-4">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat. Duis aute irure dolor in
-                            reprehenderit in voluptate velit esse cillum dolore
-                            eu fugiat nulla pariatur. Excepteur sint occaecat
-                            cupidatat non proident, sunt in culpa qui officia
-                            deserunt mollit anim id est laborum. Sed ut
-                            perspiciatis unde omnis iste natus error sit
-                            voluptatem accusantium doloremque laudantium, totam
-                            rem aperiam, eaque ipsa quae ab illo inventore
-                            veritatis et quasi architecto beatae vitae dicta
-                            sunt explicabo.
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
-        </div>
-        <div className="pb-20">
-          <div className="py-16 text-5xl text-secondary text-center font-bold">
-            Popular on Federal Forecasting App
-          </div>
-          <div className="grid md:grid-cols-3 gap-4">{popular}</div>
-        </div>
+        <Recommended/>
+        <Popular/>
       </div>
       <div className="pb-20 px-4 md:px-8 xl:px-20 2xl:px-40">
         <div className="py-16 text-5xl text-secondary text-center font-bold">
@@ -151,6 +57,7 @@ export default function Home() {
       <div className="bg-[url('/images/bg-faq.png')] md:px-8 xl:px-20 2xl:px-40 py-7">
         <FAQ />
       </div>
+
       {/* <div className="bg-[url('/images/bg-home-blue.png')] bg-no-repeat bg-cover md:px-8 xl:px-20 2xl:px-40 py-7">
                 <div className="py-16 text-5xl text-white text-center font-bold">
                     Get started in Four Easy Steps
@@ -249,43 +156,7 @@ export default function Home() {
           </Button>
         </div>
       </div>
-
-      <div className="bg-[url('/images/bg-home-video.png')] bg-cover bg-no-repeat px-4 pt-36 md:px-8 xl:px-20 2xl:px-40">
-        <div className="py-16 text-5xl text-secondary text-center font-bold">
-          Videos
-        </div>
-
-        <div className="grid md:grid-cols-4 gap-4 pt-14 pb-36">
-          <div>
-            <div className="border rounded w-auto h-[252px] bg-gray-800"></div>
-            <div className="font-medium text-secondary pt-6">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt.
-            </div>
-          </div>
-          <div>
-            <div className="border rounded w-auto h-[252px] bg-gray-800"></div>
-            <div className="font-medium text-secondary pt-6">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt.
-            </div>
-          </div>
-          <div>
-            <div className="border rounded w-auto h-[252px] bg-gray-800"></div>
-            <div className="font-medium text-secondary pt-6">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt.
-            </div>
-          </div>
-          <div>
-            <div className="border rounded w-auto h-[252px] bg-gray-800"></div>
-            <div className="font-medium text-secondary pt-6">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt.
-            </div>
-          </div>
-        </div>
-      </div>
+      <Videos/>
     </div>
   );
 }
