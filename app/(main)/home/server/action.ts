@@ -1,6 +1,6 @@
 "use server"
 
-import { apiFetch } from "@/lib/fetch";
+import { apiFetch } from "@/lib/api/fetch";
 
 export async function load()
 {

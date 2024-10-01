@@ -15,7 +15,7 @@ import {
   HiOutlineBookmark,
   HiOutlineDocumentText,
 } from "react-icons/hi2";
-import { navbars } from "@/lib/data";
+import { type Menu, MenuList} from "@/components/@config/menu";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -25,7 +25,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { logout } from "@/components/layouts/action";
+import { logout } from "@/app/(auth)/actions/Auth";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -120,15 +120,15 @@ export default function Navbar() {
       </div>
       <div className="bg-secondary text-white">
         <div className=" md:px-8 xl:px-20 2xl:px-40 space-x-32 hidden lg:flex">
-          {navbars.map((link) => (
-            <Link key={link.name} href={link.link}>
+          {MenuList.map((menu: Menu, key:number) => (
+            <Link key={key} href={menu.link}>
               <div
                 className={
                   "text-xl border-b-4  hover:border-primary hover:border-b-4 py-7 cursor-pointer " +
-                  (isActive(link.link) ? "border-primary" : "border-secondary")
+                  (isActive(menu.link) ? "border-primary" : "border-secondary")
                 }
               >
-                {link.name}
+                {menu.name}
               </div>
             </Link>
           ))}

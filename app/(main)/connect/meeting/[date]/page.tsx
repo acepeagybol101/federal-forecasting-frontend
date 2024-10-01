@@ -4,7 +4,7 @@ import { HiOutlineCalendarDays } from "react-icons/hi2";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
-import DatePicker from "@/components/datepicker";
+import DatePicker from "./components/datepicker";
 import { Button } from "@/components/ui/button";
 
 const MeetingByDate = () => {

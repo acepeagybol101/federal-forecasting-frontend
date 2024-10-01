@@ -3,7 +3,7 @@
 import { redirect } from "next/navigation";
 import { formSchema } from "@/app/(auth)/login/schema";
 import { cookies } from "next/headers";
-import { apiFetch } from "@/lib/fetch";
+import { apiFetch } from "@/lib/api/fetch";
 
 export async function login(formData: FormData) {
   const cookieStore = cookies();
@@ -34,3 +34,16 @@ export async function login(formData: FormData) {
 
   redirect("/login");
 }
+
+export async function logout() {
+    const response = await apiFetch("/users/logout", {
+      method: "POST",
+    });
+
+    if (response.statusCode === 200) {
+      cookies().delete("token");
+      cookies().delete("user");
+
+      redirect("/login");
+    }
+  }
