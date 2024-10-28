@@ -11,14 +11,14 @@ import {
 export default function Footer() {
   return (
     <div>
-      <div className="flex items-center justify-center py-5 space-x-6 md:space-x-12 p-2 md:px-8 xl:px-20 2xl:px-40 bg-white">
+      <div className="flex items-center justify-center py-5 md:py-8 space-x-6 md:space-x-12 p-2 md:px-8 xl:px-20 2xl:px-40 bg-white">
         <div>
           <Image
             src="/images/sba-logo.png"
             width={80}
             height={0}
             alt="Logo"
-            className=""
+            className="w-[40px] md:w-[80px]"
           />
         </div>
         <div>
@@ -27,7 +27,7 @@ export default function Footer() {
             width={110}
             height={0}
             alt="Logo"
-            className=""
+            className="w-[55px] md:w-[110px]"
           />
         </div>
         <div>
@@ -36,7 +36,7 @@ export default function Footer() {
             width={100}
             height={0}
             alt="Logo"
-            className=""
+            className="w-[50px] md:w-[100px]"
           />
         </div>
       </div>
@@ -49,27 +49,27 @@ export default function Footer() {
                 width={346}
                 height={0}
                 alt="Logo"
-                className=""
+                className="w-[143px] h-[77px] md:w-[346px] md:h-[179px]"
               />
             </div>
           </div>
-          <div className="text-white font-medium ">
+          <p className="text-white font-medium text-[10px] md:text-xl">
             120 E. Washington St, Camden, AR 71701
-          </div>
-          <div className="text-white font-medium ">123 456 7890</div>
-          <div className="text-white font-medium ">info@DerrickSuratt.com</div>
+          </p>
+          <p className="text-white font-medium text-[10px] md:text-xl">123 456 7890</p>
+          <p className="text-white font-medium text-[10px] md:text-xl">info@DerrickSuratt.com</p>
           <div className="text-white font-medium pt-3 flex space-x-4">
-            <FaXTwitter className="border p-3 rounded-full h-auto w-14" />
-            <FaFacebookF className="border p-3 rounded-full h-auto w-14" />
-            <FaLinkedinIn className="border p-3 rounded-full h-auto w-14" />
-            <FaYoutube className="border p-3 rounded-full h-auto w-14" />
+            <FaXTwitter className="border p-1 md:p-3 rounded-full h-6 md:h-auto w-6 md:w-12" />
+            <FaFacebookF className="border p-1 md:p-3 rounded-full h-6 md:h-auto w-6 md:w-12" />
+            <FaLinkedinIn className="border p-1 md:p-3 rounded-full h-6 md:h-auto w-6 md:w-12" />
+            <FaYoutube className="border p-1 md:p-3 rounded-full h-6 md:h-auto w-6 md:w-12" />
           </div>
         </div>
-        <div className="block md:flex text-center md:text-xl text-white pt-8 pb-4">
-          <div className="pb-3 md:pb-0">
+        <div className="flex md:text-center text-white py-4 md:pt-8 md:pb-4">
+          <p className="md:pb-3 text-[9px] md:text-xl">
             © 2024 Federal Forecasting App. All Rights Reserved.
-          </div>
-          <div className="ml-auto">Privacy Policy | Terms of Service</div>
+          </p>
+          <p className="ml-auto text-[9px] md:text-xl">Privacy Policy | Terms of Service</p>
         </div>
       </div>
     </div>

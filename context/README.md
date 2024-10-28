@@ -1,0 +1,1 @@
+The `context` folder contains React context providers and consumers for managing global state across the application.

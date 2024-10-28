@@ -1,10 +1,8 @@
 import React from "react";
-
 import { HiOutlineCalendarDays } from "react-icons/hi2";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
-import DatePicker from "./components/datepicker";
 import { Button } from "@/components/ui/button";
 
 const MeetingByDate = () => {
@@ -19,7 +17,7 @@ const MeetingByDate = () => {
                 className="bg-white rounded-lg p-6 shadow-md shadow-gray-400"
               >
                 <div className="font-medium text-3xl">Title</div>
-                <div className="text-gray-500 text-2xl">Decription</div>
+                <div className="text-gray-500 text-2xl">Description</div>
 
                 <div className="flex items-center pt-3 text-2xl text-gray-500">
                   <HiOutlineCalendarDays className="w-8 h-8" />
@@ -48,29 +46,26 @@ const MeetingByDate = () => {
               rows={5}
               className="bg-gray-200 rounded-3xl mt-9 text-2xl placeholder:font-medium p-5"
             />
-            <div className="mt-9">
-              <DatePicker />
-            </div>
             <div className="grid grid-cols-2 gap-4">
               <Input
                 type="time"
-                id="title"
-                name="title"
-                placeholder="Title"
+                id="start-time"
+                name="start-time"
+                placeholder="Start Time"
                 className="w-full bg-gray-200 rounded-full text-2xl h-14 p-5 placeholder:font-medium mt-9"
               />
               <Input
                 type="time"
-                id="title"
-                name="title"
-                placeholder="Title"
+                id="end-time"
+                name="end-time"
+                placeholder="End Time"
                 className="w-full bg-gray-200 rounded-full text-2xl h-14 p-5 placeholder:font-medium mt-9"
               />
             </div>
             <div className="text-[28px] font-medium py-9">ADD USERS</div>
             <div className="flex items-center">
               <div className="w-14 h-14 rounded-full bg-gray-300"></div>
-              <Checkbox className="w-9 h-9 ml-auto  border-black data-[state=checked]:bg-black" />
+              <Checkbox className="w-9 h-9 ml-auto border-black data-[state=checked]:bg-black" />
             </div>
             <div className="flex mt-9">
               <Button className="rounded-full text-[28px] m-auto" size={"3xl"}>

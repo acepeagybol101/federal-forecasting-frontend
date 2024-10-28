@@ -1,25 +1,19 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { auth } from "./middlewares/auth";
-import { guest } from "./middlewares/guest";
 
 export function middleware(request: NextRequest) {
-  if (
-    request.cookies.has("token") &&
-    request.nextUrl.pathname.startsWith("/login")
-  ) {
-    return auth(request);
+  const hasToken = request.cookies.has("next-auth.session-token") || request.cookies.has("__Secure-next-auth.session-token");
+  
+  if (hasToken && request.nextUrl.pathname.startsWith("/login")) {
+    return NextResponse.redirect(new URL("/home", request.url));
   }
 
-  if (
-    !request.cookies.has("token") &&
-    !request.nextUrl.pathname.startsWith("/login")
-  ) {
-    return guest(request);
+  if (!hasToken && !request.nextUrl.pathname.startsWith("/login")) {
+    return NextResponse.redirect(new URL("/login", request.url));
   }
 
-  return NextResponse.next();
+  return NextResponse.next(); 
 }
 
 export const config = {
-  matcher: ["/", "/profile", "/home", "/login"],
+  matcher: ["/", "/profile", "/home", "/login"], 
 };

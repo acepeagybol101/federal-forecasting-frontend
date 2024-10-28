@@ -9,154 +9,119 @@ import FAQ from "./faq";
 import Videos from "./videos";
 import Recommended from "./recommended";
 import Popular from "./popular";
+import Categories from "./categories";
 
 export default function Home() {
-
   return (
-    <div>
-      <div className="px-4 md:px-8 xl:px-20 2xl:px-40 py-7">
-        <div className="py-16 text-5xl text-secondary text-center font-bold">
-          Hi Ino, here&apos;s what&apos;s recommended for you!
+    <div className="space-y-8 md:space-y-20 overflow-x-hidden">
+        <div className="container md:py-7 px-4 md:px-0">
+          <Recommended/>
         </div>
-        <Recommended/>
-        <Popular/>
-      </div>
-      <div className="pb-20 px-4 md:px-8 xl:px-20 2xl:px-40">
-        <div className="py-16 text-5xl text-secondary text-center font-bold">
-          Select Categories
+      <div>
+        <div>
+          <Popular/>
+          <Categories/>
         </div>
-        <div className="grid md:grid-cols-3 gap-4">
-          {categories.map((category, key) => (
-            <Card
-              key={key}
-              className="border-secondary bg-white px-14 pt-24 pb-16"
-            >
-              <CardContent className="text-gray-600">
-                <div className="flex justify-center m-auto relative w-28 py-8 border-2 border-[#00ba00] rounded-full">
-                  <Image
-                    src={category.icon}
-                    width={42}
-                    height={42}
-                    alt="Logo"
-                    className="m-auto"
-                  />
-                </div>
-                <div className="font-semibold text-3xl leading-9 text-center py-9">
-                  {category.title}
-                </div>
-                <div className="text-xl text-center leading-8">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt.
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
-
-      <div className="bg-[url('/images/bg-faq.png')] md:px-8 xl:px-20 2xl:px-40 py-7">
         <FAQ />
-      </div>
 
-      {/* <div className="bg-[url('/images/bg-home-blue.png')] bg-no-repeat bg-cover md:px-8 xl:px-20 2xl:px-40 py-7">
-                <div className="py-16 text-5xl text-white text-center font-bold">
-                    Get started in Four Easy Steps
-                </div>
-
-                <div className="grid grid-cols-4 gap-4 pb-24">
-                    {steps.map((step, index) => (
-                        <Card
-                            key={index}
-                            className="border-[#00ba00] rounded-none bg-transparent"
-                        >
-                            <CardContent className=" px-16 py-12 text-white">
-                                <div className="bg-primary flex text-3xl font-semibold w-16 h-16 rounded-full">
-                                    <div className="m-auto">{step.key}</div>
-                                </div>
-                                <div className="font-bold text-2xl py-8 leading-9">
-                                    {step.title}
-                                </div>
-                                <p className="text-xl leading-9">
-                                    {step.description}
-                                </p>
-                            </CardContent>
-                        </Card>
-                    ))}
-                </div>
-            </div> */}
-
-      <div className="flex bg-gradient-to-r from-[#99c5ea] to-[#f0ab91] py-40 md:px-8 xl:px-20 2xl:px-40">
-        <div className="my-auto">
-          <div className="font-bold text-[64px] pb-9 text-secondary">
-            Federal Forecasting App
-          </div>
-          <div className="text-3xl  font-semibold text-gray-700 text-center tracking-wide">
-            <div className="pb-2">
-              A Platform Where You Will Get All Information
+        {/* APP BANNER */}
+        <div className="bg-gradient-to-r from-[#99c5ea] to-[#f0ab91] py-14 md:py-40">
+          <div className="container px-4 md:px-0 flex">
+            <div className="my-auto">
+              <h2 className="font-bold text-lg md:text-[64px] md:pb-9 md:leading-[3.5rem] text-center text-secondary">
+                Federal Forecasting App
+              </h2>
+              <div className="text-[10px] md:text-3xl font-semibold text-gray-700 text-center tracking-wide">
+                <p className="pb-2 text-nowrap">
+                  A Platform Where You Will Get All Information
+                </p>
+                <p>Related To The Federal Government Forecasts</p>
+              </div>
+              <div className="flex space-x-2 pt-6 md:pt-11 items-center justify-center">
+                <a href="#" className="px-3 py-1 md:pt-3 md:pb-2 md:px-10 bg-black rounded-full">
+                  <div className="flex items-center gap-1 md:gap-2 text-white">
+                    <Image
+                      src="/google-play.svg"
+                      alt="Google play"
+                      width={32}
+                      height={32}
+                      className="w-[10px] h-[10px] md:w-[32px] md:h-[32px]"
+                    />
+                    <div className="text-left tracking-wide flex flex-col">
+                      <small className="text-[6px] md:text-[9px]">GET ON</small>
+                      <small className="text-[8px] md:text-sm text-nowrap">Google Play</small>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" className="bg-black rounded-full px-3 py-1 md:pt-3 md:pb-2 md:px-10">
+                  <div className="flex items-center gap-1 md:gap-2 text-white">
+                    <FaApple className="w-[12px] h-[12px] md:w-[32px] md:h-[32px]" />
+                    <div className="text-left tracking-wide  flex flex-col">
+                      <small className="text-[6px] md:text-[9px]">Available on the</small>
+                      <small className="text-[8px] md:text-sm text-nowrap">App Store</small>
+                    </div>
+                  </div>
+                </a>
+              </div>
             </div>
-            <div>Related To The Federal Government Forecasts</div>
-          </div>
-          <div className="flex space-x-2 pt-11 items-center justify-center">
-            <a href="#" className=" pt-3 pb-2 px-10 bg-black rounded-full">
-              <div className=" inline-flex items-center text-white">
-                <Image
-                  src="/google-play.svg"
-                  alt="Google play"
-                  width={32}
-                  height={32}
-                />
-                <div className="pl-3 text-left tracking-wide">
-                  <div className="text-[9px]">GET ON</div>
-                  <div className="text-sm">Google Play</div>
-                </div>
-              </div>
-            </a>
-            <a href="#" className=" bg-black rounded-full pt-3 pb-2 px-10">
-              <div className=" inline-flex items-center text-white">
-                <FaApple className="w-8 h-auto" />
-                <div className="pl-2 text-left tracking-wide">
-                  <div className="text-[9px]">Available on the</div>
-                  <div className="text-sm">App Store</div>
-                </div>
-              </div>
-            </a>
+
+            <Image
+              src="/images/home-banner-phone.png"
+              width={625}
+              height={600}
+              alt="Logo"
+              className="ml-auto w-[140px] h-[122px] md:w-[625px] md:h-[600px]"
+            />
           </div>
         </div>
 
-        <Image
-          src="/images/home-banner-phone.png"
-          width={625}
-          height={600}
-          alt="Logo"
-          className="ml-auto"
-        />
-      </div>
+        {/* OPPORTUNITIES BANNER */}
+        <div className="relative bg-[url('/images/bg-home-white.png')] bg-no-repeat bg-right-top md:bg-bottom py-4 md:py-7">
+          <div className="container px-4 md:px-0 flex items-center">
+            <div className="w-[65%] md:w-[580px] md:pt-24 md:pb-28">
+              <div className="text-base md:text-[64px] md:leading-[80px] font-bold text-secondary">
+                Discover Federal Contracting{" "}
+                <span className="text-primary">Opportunities</span>
+              </div>
+              <div className="text-[9px] px-2 md:px-0 md:text-xl text-gray-500 md:leading-8">
+                <p className="py-3 md:py-5">
+                  Welcome to a world of hidden opportunities! Did you know that
+                  there&apos;s wealth hidden in plain sight for Small Disadvantaged
+                  Businesses.
+                </p>
+                <p>
+                  If you&apos;re ready to explore the realm of federal contracting
+                  or if you&apos;ve already started but seek to streamline your
+                  processes, you&apos;re in the right place.
+                </p>
+              </div>
+              <div className="w-full flex justify-center md:justify-start">
+                  <Button className="rounded-full text-[10px] md:text-xl h-[33px] w-[157px] md:w-[287px] md:h-[66px] mt-4 md:mt-8">
+                  Get the Book Now!
+                  <HiArrowDownTray className="ml-3 bg-white rounded-full text-black p-1 md:p-2 w-5 md:w-9 h-auto" />
+                </Button>
+              </div>
 
-      <div className="relative bg-[url('/images/bg-home-white.png')]  bg-no-repeat bg-bottom md:px-8 xl:px-20 2xl:px-40 py-7">
-        <div className="w-[580px] pt-24 pb-28">
-          <div className="text-[64px] leading-[80px] font-bold text-secondary">
-            Discover Federal Contracting{" "}
-            <span className="text-primary">Opportunities</span>
+            </div>
+            <Image
+              src="/images/wealth-book.png"
+              width={630}
+              height={600}
+              alt="Book"
+              className="mx-auto w-[107px] h-[137px] md:w-[630px] md:h-[700px]"
+            />
           </div>
-          <div className="text-xl text-gray-500 leading-8">
-            <p className="py-5">
-              Welcome to a world of hidden opportunities! Did you know that
-              there&apos;s wealth hidden in plain sight for Small Disadvantaged
-              Businesses.
-            </p>
-            <p>
-              If you&apos;re ready to explore the realm of federal contracting
-              or if you&apos;ve already started but seek to streamline your
-              processes, you&apos;re in the right place.
-            </p>
-          </div>
-          <Button className="rounded-full text-xl py-8 px-6 mt-8">
-            Get the Book Now!
-            <HiArrowDownTray className="ml-3 bg-white rounded-full text-black p-2 w-9 h-auto" />
-          </Button>
+          <Image
+            src='/images/blob-top-left.png'
+            width={625}
+            height={600}
+            alt="Background shape"
+            className="absolute -top-10 md:-top-40 -right-5 md:right-20 -z-10 w-[156px] h-[166px] md:w-[625px] md:h-[600px]"
+          />
         </div>
       </div>
-      <Videos/>
+
+      {/* <Videos/> */}
     </div>
   );
 }

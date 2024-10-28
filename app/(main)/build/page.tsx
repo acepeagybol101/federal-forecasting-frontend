@@ -1,169 +1,101 @@
-import * as React from "react";
+"use client";
 
-import {
-  HiMiniUserGroup,
-  HiBars3,
-  HiChevronDown,
-  HiUserCircle,
-  HiMiniVideoCamera,
-  HiMicrophone,
-  HiOutlineHeart,
-  HiOutlineChatBubbleOvalLeftEllipsis,
-} from "react-icons/hi2";
-import { FaRegImage, FaChartSimple } from "react-icons/fa6";
-import { Input } from "@/components/ui/input";
-
-const dummyFriends = [
-  {
-    name: "S. Orinthia Duncan",
-    isOnline: true,
-  },
-  {
-    name: "Gabby Roxas",
-    isOnline: true,
-  },
-  {
-    name: "S. Orinthia Duncan",
-    isOnline: true,
-  },
-  {
-    name: "S. Orinthia Duncan",
-    isOnline: true,
-  },
-  {
-    name: "S. Orinthia Duncan",
-    isOnline: false,
-  },
-  {
-    name: "S. Orinthia Duncan",
-    isOnline: false,
-  },
-];
+import { useState } from "react";
+import PostInput from "./build-content-body/PostInput";
+import Channels from "./left-sidebar/channels/ChannelContainer";
+import QuickLinksContainer from "./left-sidebar/quick-links/QuickLinksContainer";
+import UserInfo from "./left-sidebar/user-info/UserInfoContainer";
+import FriendsList from "./right-sidebar/FriendList";
+import GroupsList from "./right-sidebar/GroupList";
+import Image from "next/image";
+import Link from "next/link";
+import menuImage from "../../../public/menuBar/Channels.png";
+import memberImage from "../../../public/menuBar/members.png";
+import leaderBoardsImage from "../../../public/menuBar/leaderboards.png";
+import homeImage from "../../../public/menuBar/home.png";
+import CommunityGuidelinesDialog from "./left-sidebar/channels/community-guidelines-dialog/CommunityGuidelinesDialogContainer";
+import GetStartedDialogContainer from "./left-sidebar/channels/get-started-dialog/GetStartedDialogContainer";
+import Post from "@/app/(main)/build/build-content-body/Post";
 
 const Build = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleChannels = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div className="grid grid-cols-12 gap-12 px-2 p-9">
-      <div className="p-4 col-span-3">
+    <div className="grid grid-cols-1 sm:grid-cols-12 gap-12 lg:px-14 lg:py-7">
+
+      {/* Left Sidebar */}
+      <div className="hidden lg:block p-4 col-span-3">
         <h3 className="tracking-wider font-bold text-center text-secondary">
           Welcome to the Community!
         </h3>
-        <div className="flex items-center py-10">
-          <HiUserCircle className="h-auto w-12 rounded-full  text-secondary" />
-          <div className="font-medium text-xl pl-3">Derrick Surrat</div>
-        </div>
-        <h3 className="border-b border-gray-400 pb-2">Channels</h3>
-        <div className="text-xl py-8">Community Guidelines</div>
-        <div className="text-xl pb-14">Get Started</div>
-        <h3 className=" border-b border-gray-400 pb-2 mb-3">Quick Links</h3>
-        <div className="flex items-center text-xl py-4">
-          <HiMiniUserGroup className="h-auto w-8 text-secondary" />
-          <span className="pl-2">Members</span>
-        </div>
-        <div className="flex items-center text-xl py-4">
-          <FaChartSimple className="h-auto w-8 text-secondary" />
-          <span className="pl-2">Leaderboards</span>
-        </div>
-        <div className="flex items-center text-xl py-4">
-          <HiMiniUserGroup className="h-auto w-8 text-secondary" />
-          <span className="pl-2">Badges</span>
-        </div>
+        <UserInfo />
+        <Channels />
+        <QuickLinksContainer />
       </div>
 
-      <div className="w-full col-span-6 px-24 space-y-5">
-        <div className="bg-white rounded-3xl shadow-lg w-full p-7 border">
-          <div className="flex items-center pr-24 border-b border-gray-400 pb-6">
-            <HiUserCircle className="h-auto w-12  rounded-full  text-secondary" />
-            <Input
-              id="mind"
-              name="mind"
-              placeholder="What’s on your mind, Derrict?"
-              className="block rounded-full appearance-none w-full h-10  pl-5 focus-visible:ring-0 focus-visible:ring-offset-0 bg-[#e9e9e9] ml-5"
+      {/* Main Content */}
+      <div className="w-full col-span-6 md:col-span-12 lg:col-span-6 lg:px-2 space-y-5">
+        <div className="flex lg:hidden justify-center items-center mb-2 pt-3 bg-white">
+          <div className="flex items-center justify-center gap-8 w-full relative">
+            <Link href="/home">
+              <Image
+                src={homeImage}
+                alt="Home"
+                className="cursor-pointer pb-2"
+                width={25}
+                height={25}
+              />
+            </Link>
+
+            <Link href="/build/member">
+              <Image
+                src={memberImage}
+                alt="Members"
+                className="cursor-pointer pb-2"
+                width={25}
+                height={25}
+              />
+            </Link>
+            <Link href="/build/leaderboards">
+              <Image
+                src={leaderBoardsImage}
+                alt="Leaderboards"
+                className="cursor-pointer pb-2"
+                width={25}
+                height={25}
+              />
+            </Link>
+            <Image
+              src={menuImage}
+              alt="Menu"
+              className="cursor-pointer pb-2"
+              width={25}
+              height={25}
+              onClick={toggleChannels}
             />
-          </div>
-          <div className="grid grid-cols-3 justify-center pt-5">
-            <div className="flex items-center m-auto">
-              <FaRegImage className=" h-auto w-8 text-primary" />
-              <span className="font-medium pl-4">Image</span>
-            </div>
-            <div className="flex items-center m-auto">
-              <HiMiniVideoCamera className=" h-auto w-8 text-primary" />
-              <span className=" font-medium pl-4">Video</span>
-            </div>
-            <div className="flex items-center m-auto">
-              <HiMicrophone className=" h-auto w-8 text-primary" />
-              <span className=" font-medium pl-4">Audio</span>
-            </div>
+            {isOpen && (
+              <div className="md:hidden absolute bg-white top-10 space-y-2 rounded-lg shadow-md p-3 right-2">
+                <CommunityGuidelinesDialog />
+                <GetStartedDialogContainer />
+              </div>
+            )}
           </div>
         </div>
-        <div className="bg-white rounded-3xl shadow-lg w-full p-7 border">
-          <div className="flex items-start">
-            <div className="w-14 h-14 bg-gray-300 rounded-full"></div>
-            <div className="pl-5">
-              <span className="text-xl">Gabby R. (Community Manager)</span>
-              <span className="text-lg block">1 hour ago</span>
-            </div>
-          </div>
-          <p className="text-lg p-12">
-            ✨ Monday Motivation! ✨ &quot;Success is where preparation and
-            opportunity meet.&quot; 💡 It’s not just about waiting for the right
-            moment—it’s about being ready when that moment comes. Whether you’re
-            prepping for your next government contract or building your
-            business, remember that the groundwork you lay today will lead to
-            the wins of tomorrow. 🚀 What are you doing to prepare for your next
-            big opportunity? Happy Monday! 
-          </p>
-          <div className="flex items-center">
-            <HiOutlineHeart className=" h-auto w-8" />
-            <span className="text-xl pl-5 pr-10">3 Likes</span>
-            <HiOutlineChatBubbleOvalLeftEllipsis className=" h-auto w-8" />
-            <span className="text-xl pl-5">0 Comments</span>
-          </div>
+
+        <div className="px-4 lg:px-0 pb-4 lg:pb-0 space-y-5">
+          <PostInput />
+          <Post />
         </div>
       </div>
 
-      <div className="pl-8 p-4 col-span-3">
-        <div>
-          <div className="flex border-b border-gray-400 mb-4">
-            <h3 className="pb-2">Friends</h3>
-            <HiBars3 className="ml-auto w-7 h-7" />
-          </div>
-          {dummyFriends.map((friend, key) => (
-            <div key={key} className="flex items-center py-2">
-              <div className="w-14 h-12 bg-gray-300 rounded-full"></div>
-              <div className="text-lg w-full pl-2">{friend.name}</div>
-              <div
-                className={
-                  "h-5 w-6 rounded-full " +
-                  (friend.isOnline ? "bg-[#00980f]" : "bg-gray-300")
-                }
-              ></div>
-            </div>
-          ))}
-          <div className="flex mt-5">
-            <HiChevronDown className="w-7 h-auto m-auto" />
-          </div>
-        </div>
-        <div className="mt-5">
-          <div className="flex border-b border-gray-400 mb-4">
-            <h3 className=" pb-2">Groups</h3>
-            <HiBars3 className="ml-auto w-7 h-7" />
-          </div>
-          {dummyFriends.map((friend, key) => (
-            <div key={key} className="flex items-center py-2">
-              <div className="w-14 h-12 bg-gray-300 rounded-full"></div>
-              <div className="text-lg w-full pl-2">{friend.name}</div>
-              <div
-                className={
-                  "h-5 w-6 rounded-full " +
-                  (friend.isOnline ? "bg-[#00980f]" : "bg-gray-300")
-                }
-              ></div>
-            </div>
-          ))}
-          <div className="flex mt-5">
-            <HiChevronDown className="w-7 h-auto m-auto" />
-          </div>
-        </div>
+      {/* Right Sidebar */}
+      <div className="hidden lg:block p-4 col-span-3">
+        <FriendsList />
+        <GroupsList />
       </div>
     </div>
   );

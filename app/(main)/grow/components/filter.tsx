@@ -17,12 +17,12 @@ const Filter = ({ children }: { children: React.ReactNode }) => {
   return (
     <Popover>
       <PopoverTrigger>{children}</PopoverTrigger>
-      <PopoverContent className="w-96 mr-80">
+      <PopoverContent className="w-[80vw] mr-10 lg:w-96 lg:mr-80">
         <div className="pb-5 px-3">
-          <div className="text-2xl py-2 pl-5">State:</div>
+          <p className="text-sm lg:text-xl py-2 pl-5">State:</p>
           <Select>
-            <SelectTrigger className=" rounded-full text-xl w-full p-6 shadow-lg">
-              <SelectValue placeholder="Select" />
+            <SelectTrigger className="rounded-full text-xl w-full p-6 h-7 lg:h-9 shadow-lg">
+              <SelectValue/>
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="light">Light</SelectItem>
@@ -30,10 +30,10 @@ const Filter = ({ children }: { children: React.ReactNode }) => {
               <SelectItem value="system">System</SelectItem>
             </SelectContent>
           </Select>
-          <div className="text-2xl py-2 pl-5 mt-3">Category:</div>
+          <p className="text-sm lg:text-xl py-2 pl-5 mt-3">Category:</p>
           <Select>
-            <SelectTrigger className=" rounded-full text-xl w-full p-6 shadow-lg">
-              <SelectValue placeholder="Select" />
+            <SelectTrigger className=" rounded-full text-xl w-full p-6 h-7 lg:h-9 shadow-lg">
+              <SelectValue/>
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="light">Light</SelectItem>
@@ -41,10 +41,10 @@ const Filter = ({ children }: { children: React.ReactNode }) => {
               <SelectItem value="system">System</SelectItem>
             </SelectContent>
           </Select>
-          <div className="text-2xl py-2 pl-5 mt-3">Subcategory:</div>
+          <p className="text-sm lg:text-xl py-2 pl-5 mt-3">Subcategory:</p>
           <Select>
-            <SelectTrigger className=" rounded-full text-xl w-full p-6 shadow-lg">
-              <SelectValue placeholder="Select" />
+            <SelectTrigger className="rounded-full text-xl w-full p-6 h-7 lg:h-9 shadow-lg">
+              <SelectValue/>
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="light">Light</SelectItem>

@@ -1,0 +1,1 @@
+The `hooks` folder contains custom React hooks for encapsulating reusable logic across the application.

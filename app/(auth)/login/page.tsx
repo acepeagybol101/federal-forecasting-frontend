@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-
+import { useRouter } from 'next/navigation';
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -13,7 +13,6 @@ import { formSchema } from "@/app/(auth)/login/schema";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -25,6 +24,7 @@ import {
   HiOutlineLockClosed,
   HiOutlineEye,
 } from "react-icons/hi2";
+import Loading from "@/components/ui/loading"; 
 
 export default function Login() {
   const form = useForm<z.infer<typeof formSchema>>({
@@ -34,13 +34,30 @@ export default function Login() {
       password: "",
     },
   });
+  const router = useRouter();
+  const [loading, setLoading] = React.useState(false);
 
-  const handleLogin = (data: z.infer<typeof formSchema>) => {
-    const formData = new FormData();
-    formData.append("email", data.email);
-    formData.append("password", data.password);
-    login(formData);
+  const handleLogin = async (data: z.infer<typeof formSchema>) => {
+    setLoading(true); 
+    const validation = await formSchema.safeParseAsync(data);
+    router.push('/home');
+    if (!validation.success) {
+        console.log("Validation Errors: ", validation.error);
+        setLoading(false); 
+        return;
+    }
   };
+
+  // Demo login handler
+  const handleDemoLogin = async () => {
+    setLoading(true); 
+    const demoFormData = new FormData();
+    demoFormData.append("email", "federal-app@demo.com");
+    demoFormData.append("password", "12345678");
+    await login(demoFormData);
+    setLoading(false); 
+  };
+
 
   return (
     <div className="flex h-screen">
@@ -86,10 +103,6 @@ export default function Login() {
                             Email
                           </FormLabel>
                         </div>
-                        {/* <FormDescription>
-                                                    This is your public display
-                                                    name.
-                                                </FormDescription> */}
                         <FormMessage />
                       </FormItem>
                     )}
@@ -123,16 +136,11 @@ export default function Login() {
                           </FormLabel>
                           <HiOutlineEye className="absolute text-gray-800 h-auto w-6 my-auto right-4 top-0 bottom-0" />
                         </div>
-
-                        {/* <FormDescription>
-                                                    This is your public display
-                                                    name.
-                                                </FormDescription> */}
                         <FormMessage />
                       </FormItem>
                     )}
                   />
-                  <div className="text-primary text-right mt-3">
+                  <div className="text-primary text-center mt-3">
                     Forgot Password?
                   </div>
                 </div>
@@ -145,18 +153,22 @@ export default function Login() {
                   >
                     Sign In
                   </Button>
-                  <p className=" text-center my-4">
-                    Don’t have an account?
-                    <span className="text-primary font-medium pl-1 cursor-pointer">
-                      Sign Up
-                    </span>
-                  </p>
+
+                  <Button
+                    type="button"
+                    onClick={handleDemoLogin}
+                    className="rounded-full w-full mt-2 bg-gray-300 text-black font-semibold"
+                    size={"lg"}
+                  >
+                    Demo Sign In
+                  </Button>
                 </div>
               </form>
             </Form>
           </CardContent>
         </Card>
       </div>
+      {loading && <Loading />} 
     </div>
   );
 }
